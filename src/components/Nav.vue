@@ -1,8 +1,12 @@
 <template>
   <div>
     <div class="menu-bar">
-      <router-link v-if="!isError" :to="'/'"><img :src="logo" class="top-logo" @click="closeMenu"/></router-link>
-      <router-link v-if="isError" :to="'/error'"><img :src="logo" class="top-logo" @click="closeMenu"/></router-link>
+      <router-link v-if="!isError" :to="'/'"
+        ><img :src="logo" class="top-logo" @click="closeMenu"
+      /></router-link>
+      <router-link v-if="isError" :to="'/error'"
+        ><img :src="logo" class="top-logo" @click="closeMenu"
+      /></router-link>
       <span style="font-size: 30px; cursor: pointer" @click="toggleMenu"
         >&#9776;</span
       >
@@ -17,7 +21,6 @@
           active-class="active"
           exact
           :style="{ color: name.colour }"
-          @click.native="findType($prismic.asText(name.name))"
         >
           <prismic-image v-if="name" :field="name.exemplar_image" /><br />{{
             $prismic.asText(name.name)
@@ -27,15 +30,18 @@
     </div>
 
     <div class="sidebar">
-      <router-link v-if="!isError" :to="'/'"><img :src="logo" class="logo" /></router-link>
-      <router-link v-if="isError" :to="'/error'"><img :src="logo" class="logo" /></router-link>
+      <router-link v-if="!isError" :to="'/'"
+        ><img :src="logo" class="logo"
+      /></router-link>
+      <router-link v-if="isError" :to="'/error'"
+        ><img :src="logo" class="logo"
+      /></router-link>
       <div v-for="(name, index) in data" :key="index" class="cell">
         <router-link
           :to="'/' + $prismic.asText(name.name)"
           active-class="active"
           exact
           :style="{ color: name.colour }"
-          @click.native="findType($prismic.asText(name.name))"
         >
           <prismic-image v-if="name" :field="name.exemplar_image" /><br />{{
             $prismic.asText(name.name)
@@ -52,20 +58,16 @@ export default {
   data() {
     return {
       logo: require("../assets/jyre-logo-dark.svg"),
-      type: null,
       isMenuOpen: false,
     };
   },
   methods: {
-    findType(typeName) {
-      this.$emit("find-type", typeName);
-    },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
     },
     closeMenu() {
       this.isMenuOpen = false;
-    }
+    },
   },
 };
 </script>
@@ -184,46 +186,46 @@ img {
   }
 
   .sidebar {
-  display: initial;
-  position: absolute;
-  top:0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  width: 15rem;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: scroll;
-  text-transform: capitalize;
-  /* cursor: pointer; */
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  overflow-x: hidden;
-  transition: 0.5s;
-  z-index: 1000;
-}
+    display: initial;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 15rem;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: scroll;
+    text-transform: capitalize;
+    /* cursor: pointer; */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1000;
+  }
 
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
-  text-decoration: none;
-}
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
 
-.sidebar a.active {
-  background-color: rgb(192, 192, 192);
-  color: black !important;
-  transition: ease-out 1s;
-}
+  .sidebar a.active {
+    background-color: rgb(192, 192, 192);
+    color: black !important;
+    transition: ease-out 1s;
+  }
 
-.sidebar a:hover {
-  cursor: pointer;
-}
-.sidebar a:hover:not(.active) {
-  background-color: rgba(192, 192, 192, 0.2);
-  color: white;
-}
+  .sidebar a:hover {
+    cursor: pointer;
+  }
+  .sidebar a:hover:not(.active) {
+    background-color: rgba(192, 192, 192, 0.2);
+    color: white;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

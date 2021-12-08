@@ -7,23 +7,23 @@
     <div class="info">
       <h2>The Jyre 9 Leader Types</h2>
       <div class="content">
-      <p>
-        What are your strengths? What about your weaknesses, or “gaps”? And how
-        does the unique pattern of these create your distinct style of
-        leadership?
-      </p>
-      <p>
-        Each of the nine Jyre leader types has a unique way of leading and
-        inspiring those around them. The below explanations can help you decide
-        your aspirational leader types.
-      </p>
-      <p>
-        Got five minutes? By mapping your strengths in Jyre, you’ll instantly
-        recieve a report with your two top leader types and much more.
-        <a href="https://jyre.io/contact-us"
-          >Get in touch for a 14 day free trial</a
-        >.
-      </p>
+        <p>
+          What are your strengths? What about your weaknesses, or “gaps”? And
+          how does the unique pattern of these create your distinct style of
+          leadership?
+        </p>
+        <p>
+          Each of the nine Jyre leader types has a unique way of leading and
+          inspiring those around them. The below explanations can help you
+          decide your aspirational leader types.
+        </p>
+        <p>
+          Got five minutes? By mapping your strengths in Jyre, you’ll instantly
+          recieve a report with your two top leader types and much more.
+          <a href="https://jyre.io/contact-us"
+            >Get in touch for a 14 day free trial</a
+          >.
+        </p>
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@ a {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    .home {
+  .home {
     padding: 1rem 0 2rem 15rem;
     height: 100vh;
   }
@@ -92,15 +92,14 @@ a {
 
   h2 {
     margin-top: 10rem;
-  text-align: left;
-  
-}
+    text-align: left;
+  }
 
-p {
-  margin: 1rem;
-  text-align: left;
-  font-weight: bold;
-}
+  p {
+    margin: 1rem;
+    text-align: left;
+    font-weight: bold;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -126,7 +125,6 @@ p {
 
   p {
     padding-bottom: 1rem;
-
   }
 
   a {

@@ -57,9 +57,6 @@ export default {
       );
       this.selectedType = type;
     },
-    updateURL() {
-      this.url = this.$route.params;
-    },
   },
   created() {
     // Call the API query method
@@ -112,7 +109,7 @@ p {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    .leadertype {
+  .leadertype {
     padding: 1rem 0 0 15rem;
     height: 100vh;
   }

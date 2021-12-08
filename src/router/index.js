@@ -1,30 +1,32 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import LeaderType from '../components/LeaderType.vue'
-import ErrorPage from '../components/ErrorPage.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "../views/Home.vue";
+import LeaderType from "../components/LeaderType.vue";
+import ErrorPage from "../components/ErrorPage.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
   {
-    path: '/error', component: ErrorPage
+    path: "/error",
+    component: ErrorPage,
   },
   {
-    path: '/:name', component: LeaderType, props: true
+    path: "/:name",
+    component: LeaderType,
+    props: true,
   },
- 
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
